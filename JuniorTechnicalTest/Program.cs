@@ -8,7 +8,7 @@ class Program
         Program program = new Program();
 
         
-        program.CountCharacterUsingLinq();
+        program.CountMatchedCharacters();
     }
 
     /// <summary>
@@ -76,5 +76,33 @@ class Program
         char character = 'n';
         int count = text.Where(x => x == character).Count();
         Console.WriteLine($"character: {character} is {count} times");
+    }
+
+
+    /// <summary>
+    /// Calculates the Hamming distance between two strings.
+    /// </summary>
+    /// <remarks>
+    /// The Hamming distance is the number of positions at which corresponding symbols
+    /// are different between two equal-length strings.
+    /// </remarks>
+    private void CountMatchedCharacters()
+    {
+        string text1 = "example1";
+        string text2 = "example2";
+
+        if (text1.Length != text2.Length)
+            throw new Exception("Different lengths");
+
+        int distance = 0;
+        for (int i = 0; i < text1.Length ; i++)
+        {
+            if (text1[i] != text2[i])
+            {
+                distance++;
+            }
+        }
+
+        Console.WriteLine($"Distance is :{distance}");
     }
 }

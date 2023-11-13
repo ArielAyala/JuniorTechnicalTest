@@ -8,7 +8,7 @@ class Program
         Program program = new Program();
 
         
-        program.InvertString();
+        program.CountCharacter();
     }
 
     /// <summary>
@@ -25,5 +25,41 @@ class Program
         }
 
         Console.WriteLine(textResult);
+    }
+
+    /// <summary>
+    /// It reverses a given string and prints it to the console using array.
+    /// </summary>
+    private void InvertStringUsingArray()
+    {
+        string text = "example";
+        string textResult = "";
+
+        char[] chars = text.ToCharArray();
+        Array.Reverse(chars);
+        textResult = new String(chars); 
+
+        Console.WriteLine(textResult);
+    }
+
+    /// <summary>
+    /// Counts the occurrences of a specific character in a given string.
+    /// </summary>
+    /// <remarks>
+    /// This method iterates through each character in the input string and counts
+    /// how many times the specified character appears.
+    /// </remarks>
+    private void CountCharacter()
+    {
+        string text = "asdkkfdkcnjdiqyewrqotinkbzncbnvbm";
+        char character = 'n';
+        int counter = 0;
+        foreach (var c in text)
+        {
+            if (c == character)
+                counter++;
+        }
+
+        Console.WriteLine($"character: {character} is {counter} times");
     }
 }

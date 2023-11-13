@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 class Program
 {
@@ -8,7 +9,7 @@ class Program
         Program program = new Program();
 
         
-        program.CountMatchedCharacters();
+        program.CountWords();
     }
 
     /// <summary>
@@ -104,5 +105,20 @@ class Program
         }
 
         Console.WriteLine($"Distance is :{distance}");
+    }
+
+    /// <summary>
+    /// Counts the number of words in a given text.
+    /// </summary>
+    private void CountWords()
+    {
+        string text = "   Lorem Ipsum is simply dummy text   of the printing and      typesetting industry        ";
+        int count = 0;
+
+        text = Regex.Replace(text, @"\s+", " ").Trim();
+        var words = text.Split(' ');
+        count = words.Length;
+
+        Console.WriteLine($"The number of words is: {count}");
     }
 }

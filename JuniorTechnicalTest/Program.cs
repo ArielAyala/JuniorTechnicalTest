@@ -9,7 +9,7 @@ class Program
         Program program = new Program();
 
         
-        program.CountWords();
+        program.CountNumbersInString();
     }
 
     /// <summary>
@@ -120,5 +120,18 @@ class Program
         count = words.Length;
 
         Console.WriteLine($"The number of words is: {count}");
+    }
+
+    /// <summary>
+    /// Counts the number of numeric digits in a given string.
+    /// </summary>
+    private void CountNumbersInString()
+    {
+        string text = "12lorem6";
+        string pattern = @"[0-9]";
+
+        var regex = new Regex(pattern);
+        int number = regex.Matches(text).Count();
+        Console.WriteLine($"Numbers : {number}");
     }
 }

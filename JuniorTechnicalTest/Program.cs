@@ -8,8 +8,13 @@ class Program
         // Crear una instancia de la clase Program
         Program program = new Program();
 
-        
+        program.InvertString();
+        program.InvertStringUsingArray();
+        program.CountCharacter();
+        program.CountCharacterUsingLinq();
+        program.CountMatchedCharacters();
         program.CountNumbersInString();
+        program.CountWords();
     }
 
     /// <summary>
